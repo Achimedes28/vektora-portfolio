@@ -8,6 +8,10 @@
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const hasGSAP = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
+  // Touch devices / small screens get a lighter motion profile (no live SVG filter, no smooth-scroll hijack)
+  const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  const lite = isTouch || window.innerWidth <= 900;
+  if (lite) document.documentElement.classList.add("is-lite");
 
   document.body.classList.add("is-loading");
 
@@ -32,8 +36,13 @@
   };
   fitMega();
   document.fonts && document.fonts.ready.then(() => { fitMega(); hasGSAP && ScrollTrigger.refresh(); });
-  let rT;
-  window.addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(fitMega, 120); });
+  let rT, lastW = window.innerWidth;
+  window.addEventListener("resize", () => {
+    // mobile browsers fire resize when the address bar shows/hides — only refit on real width changes
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    clearTimeout(rT); rT = setTimeout(fitMega, 120);
+  });
 
   /* ---------- Mobile menu ---------- */
   const burger = $(".nav__burger");
@@ -66,10 +75,11 @@
   if (!hasGSAP) { done(); return; }
 
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true });
 
   /* ---------- Smooth scroll ---------- */
   let lenis = null;
-  if (!reduced && typeof window.Lenis !== "undefined") {
+  if (!reduced && !isTouch && typeof window.Lenis !== "undefined") {
     lenis = new Lenis({ duration: 1.15, smoothWheel: true });
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.add((t) => lenis.raf(t * 1000));
@@ -116,10 +126,19 @@
 
   /* ---------- Liquid (animated SVG turbulence) ---------- */
   const turb = $("#turb");
-  if (turb) {
-    let t = 0, last = 0;
+  if (turb && lite) {
+    // Static filter (rendered once) + GPU-only drift via CSS — animating the filter itself is too heavy for phones
+    turb.setAttribute("numOctaves", "2");
+  } else if (turb) {
+    let t = 0, last = 0, liquidVisible = true;
+    const vis = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => (en.isIntersecting ? vis.add(en.target) : vis.delete(en.target)));
+      liquidVisible = vis.size > 0;
+    });
+    $$(".hero__liquid, .footer__liquid").forEach((el) => io.observe(el));
     gsap.ticker.add((time) => {
-      if (time - last < 1 / 30) return; // ~30fps is plenty
+      if (!liquidVisible || time - last < 1 / 30) return; // ~30fps, and only while on screen
       last = time;
       t += 0.012;
       const fx = 0.008 + Math.sin(t) * 0.0025;
@@ -130,15 +149,17 @@
   }
   gsap.to(".hero__mark", { y: -14, rotate: 4, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
 
-  // Hero parallax on scroll
-  gsap.to(".hero .mega__row", {
-    yPercent: 18, ease: "none",
-    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
-  });
-  gsap.to(".hero__liquid .liquid", {
-    yPercent: 12, ease: "none",
-    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
-  });
+  // Hero parallax on scroll (desktop only)
+  if (!lite) {
+    gsap.to(".hero .mega__row", {
+      yPercent: 18, ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+    });
+    gsap.to(".hero__liquid .liquid", {
+      yPercent: 12, ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+    });
+  }
 
   /* ---------- Nav state ---------- */
   const nav = $(".nav");
@@ -155,7 +176,7 @@
   /* ---------- Marquee reacts to scroll velocity ---------- */
   const mq = gsap.to(".marquee__track", { xPercent: -50, duration: 22, ease: "none", repeat: -1 });
   let mqDir = 1;
-  ScrollTrigger.create({
+  if (!lite) ScrollTrigger.create({
     onUpdate: (self) => {
       mqDir = self.direction;
       const boost = gsap.utils.clamp(1, 7, 1 + Math.abs(self.getVelocity()) / 400);
