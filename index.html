@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vektora Project — Sistem digital untuk operasional bisnis</title>
+  <meta name="description" content="Vektora Project membangun ERP, aplikasi internal, dashboard, dan integrasi sistem untuk operasional bisnis. Bandung, Jawa Barat." />
+  <meta property="og:title" content="Vektora Project" />
+  <meta property="og:description" content="Sistem digital untuk operasional bisnis — ERP, aplikasi internal, dashboard & integrasi." />
+  <meta name="theme-color" content="#2B0F0F" />
+  <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__word"><span>V</span><span>E</span><span>K</span><span>T</span><span>O</span><span>R</span><span>A</span></div>
+    <div class="preloader__count"><span id="count">0</span>%</div>
+    <div class="preloader__bar"><i></i></div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__label">Lihat</span></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#top" class="nav__logo" aria-label="Vektora Project — beranda">
+      <img src="assets/logo-mark.png" alt="" width="34" height="28" />
+      <span>Vektora<br />Project</span>
+    </a>
+    <nav class="nav__links" aria-label="Navigasi utama">
+      <a href="#karya">Karya</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#proses">Proses</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <a href="#kontak" class="pill pill--dark magnetic"><span>Mulai Proyek</span></a>
+    <button class="nav__burger" aria-label="Buka menu" aria-expanded="false"><i></i><i></i></button>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="#karya">Karya</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#proses">Proses</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__top">
+        <div class="hero__panel">
+          <p class="eyebrow reveal-up">Studio sistem digital — Bandung, Indonesia</p>
+          <h1 class="hero__lead split">Kami memetakan alur kerja, lalu membangun sistem yang benar-benar dipakai tim.</h1>
+          <div class="hero__cta reveal-up">
+            <a href="#karya" class="pill pill--dark magnetic"><span>Lihat Karya</span></a>
+            <a href="https://wa.me/6281998888967" target="_blank" rel="noopener" class="pill pill--ghost magnetic"><span>WhatsApp</span></a>
+          </div>
+        </div>
+        <div class="hero__liquid" aria-hidden="true">
+          <svg class="liquid" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <filter id="warp">
+                <feTurbulence id="turb" type="fractalNoise" baseFrequency="0.008 0.014" numOctaves="3" seed="7" result="n" />
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="140" xChannelSelector="R" yChannelSelector="G" />
+              </filter>
+              <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#FF5FCB" />
+                <stop offset=".35" stop-color="#C21E8E" />
+                <stop offset=".6" stop-color="#F58AD9" />
+                <stop offset="1" stop-color="#8E0F62" />
+              </linearGradient>
+            </defs>
+            <g filter="url(#warp)">
+              <rect x="-100" y="-100" width="800" height="600" fill="url(#lg)" />
+              <g class="stripes" fill="none" stroke-width="26">
+                <path d="M-50 40 C120 0 260 120 650 60" stroke="#FFB3EA" opacity=".55" />
+                <path d="M-50 150 C160 90 300 230 650 170" stroke="#7A0B55" opacity=".6" />
+                <path d="M-50 260 C140 200 320 330 650 270" stroke="#FF8ADB" opacity=".5" />
+                <path d="M-50 360 C180 300 340 430 650 380" stroke="#6B0848" opacity=".55" />
+              </g>
+            </g>
+          </svg>
+          <img class="hero__mark" src="assets/logo-mark.png" alt="" width="256" height="209" />
+          <span class="hero__sticker">Est. 2026</span>
+        </div>
+      </div>
+
+      <h2 class="mega" aria-label="Vektora">
+        <span class="mega__row"><span class="ch">V</span><span class="ch">E</span><span class="ch">K</span><span class="ch">T</span><span class="ch">O</span><span class="ch">R</span><span class="ch">A</span></span>
+      </h2>
+
+      <div class="hero__meta">
+        <ul>
+          <li><a href="#karya">Karya</a></li>
+          <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#proses">Proses</a></li>
+        </ul>
+        <ul>
+          <li>ERP</li>
+          <li>Aplikasi Internal</li>
+          <li>Dashboard &amp; Integrasi</li>
+        </ul>
+        <ul>
+          <li>Jawa Barat</li>
+          <li>Indonesia</li>
+          <li>Remote-friendly</li>
+        </ul>
+        <ul class="hero__mail">
+          <li><a href="mailto:vektoraproject.id@gmail.com">vektoraproject.id@gmail.com</a></li>
+          <li><a href="https://instagram.com/vektoraproject" target="_blank" rel="noopener">@vektoraproject</a></li>
+        </ul>
+        <a href="#karya" class="scroll-dot" aria-label="Gulir ke karya"><span>↓</span></a>
+      </div>
+      <div class="dashline" aria-hidden="true"></div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>ERP</span><b>✦</b><span>Aplikasi Internal</span><b>✦</b><span>Dashboard</span><b>✦</b><span>Integrasi Data</span><b>✦</b><span>Otomasi</span><b>✦</b>
+        <span>ERP</span><b>✦</b><span>Aplikasi Internal</span><b>✦</b><span>Dashboard</span><b>✦</b><span>Integrasi Data</span><b>✦</b><span>Otomasi</span><b>✦</b>
+      </div>
+    </div>
+
+    <!-- WORKS -->
+    <section class="works" id="karya">
+      <div class="works__head">
+        <p class="eyebrow">(01) — Karya</p>
+        <h2 class="title split">Yang sudah kami bangun</h2>
+        <p class="works__note">Setiap karya diberi label jujur: dipakai operasional, demo, atau konsep. Kami tidak memajang klien yang belum ada.</p>
+      </div>
+
+      <div class="works__pin">
+        <div class="works__track">
+          <!-- 01 VINADODITA -->
+          <article class="card card--mustard" data-cursor="Lihat">
+            <div class="card__top">
+              <span class="card__num">01</span>
+              <span class="tag tag--live"><i></i>Dipakai operasional</span>
+            </div>
+            <div class="mock mock--vina">
+              <div class="mock__bar"><i></i><i></i><i></i><span>vinadodita / dashboard</span></div>
+              <div class="mock__body">
+                <aside class="mock__side"><b></b><b class="on"></b><b></b><b></b><b></b></aside>
+                <div class="mock__main">
+                  <div class="kpis">
+                    <div><small>Okupansi</small><strong data-count="87">0</strong><em>%</em></div>
+                    <div><small>Kamar</small><strong data-count="32">0</strong></div>
+                    <div><small>Tagihan jatuh tempo</small><strong data-count="4">0</strong></div>
+                  </div>
+                  <div class="rooms">
+                    <span class="o"></span><span class="o"></span><span></span><span class="o"></span><span class="o"></span><span class="o"></span><span class="w"></span><span class="o"></span>
+                    <span class="o"></span><span></span><span class="o"></span><span class="o"></span><span class="o"></span><span class="o"></span><span class="o"></span><span class="w"></span>
+                    <span class="o"></span><span class="o"></span><span class="o"></span><span></span><span class="o"></span><span class="o"></span><span class="o"></span><span class="o"></span>
+                    <span class="o"></span><span class="o"></span><span class="w"></span><span class="o"></span><span class="o"></span><span></span><span class="o"></span><span class="o"></span>
+                  </div>
+                  <div class="bars"><i style="--h:40%"></i><i style="--h:62%"></i><i style="--h:55%"></i><i style="--h:78%"></i><i style="--h:70%"></i><i style="--h:88%"></i><i style="--h:84%"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="card__info">
+              <h3>Vinadodita</h3>
+              <p>Sistem manajemen kos &amp; properti: tenant dan kamar, inventaris aset, pencatatan keuangan, dan dashboard operasional. Dibangun Vektora dan dipakai untuk mengelola kos milik pendiri.</p>
+              <ul class="chips"><li>Manajemen Properti</li><li>Keuangan</li><li>Dashboard</li></ul>
+            </div>
+            <small class="card__disc">Tampilan ilustratif · data bukan data asli</small>
+          </article>
+
+          <!-- 02 DASHBOARD -->
+          <article class="card card--pink" data-cursor="Demo">
+            <div class="card__top">
+              <span class="card__num">02</span>
+              <span class="tag">Demo produk</span>
+            </div>
+            <div class="mock mock--dash">
+              <div class="mock__bar"><i></i><i></i><i></i><span>ops-dashboard / multi-outlet</span></div>
+              <div class="mock__body mock__body--col">
+                <div class="kpis kpis--4">
+                  <div><small>Penjualan</small><strong>128<em>jt</em></strong></div>
+                  <div><small>Outlet</small><strong>6</strong></div>
+                  <div><small>Stok kritis</small><strong>12</strong></div>
+                  <div><small>Growth</small><strong>+9<em>%</em></strong></div>
+                </div>
+                <svg class="line" viewBox="0 0 300 110" preserveAspectRatio="none">
+                  <path class="line__area" d="M0 90 L30 80 L60 84 L90 62 L120 68 L150 48 L180 55 L210 34 L240 40 L270 22 L300 26 L300 110 L0 110Z" />
+                  <path class="line__stroke" d="M0 90 L30 80 L60 84 L90 62 L120 68 L150 48 L180 55 L210 34 L240 40 L270 22 L300 26" />
+                </svg>
+                <div class="table"><span></span><span></span><span></span><span></span></div>
+              </div>
+            </div>
+            <div class="card__info">
+              <h3>Dashboard Operasional</h3>
+              <p>Rekap penjualan dan stok dari beberapa outlet dalam satu layar — pengganti rekap manual di spreadsheet. Bisa disambungkan ke sistem yang sudah dipakai.</p>
+              <ul class="chips"><li>Integrasi</li><li>Laporan</li><li>Multi-outlet</li></ul>
+            </div>
+            <small class="card__disc">Demo · data ilustratif · bukan implementasi klien</small>
+          </article>
+
+          <!-- 03 BIMBEL -->
+          <article class="card card--cream" data-cursor="Konsep">
+            <div class="card__top">
+              <span class="card__num">03</span>
+              <span class="tag">Dalam pengembangan</span>
+            </div>
+            <div class="mock mock--bimbel">
+              <div class="mock__bar"><i></i><i></i><i></i><span>bimbel / jadwal-kelas</span></div>
+              <div class="mock__body mock__body--col">
+                <div class="sched">
+                  <b>Sen</b><b>Sel</b><b>Rab</b><b>Kam</b><b>Jum</b>
+                  <span class="s1">MTK</span><span></span><span class="s2">IPA</span><span class="s1">MTK</span><span></span>
+                  <span></span><span class="s3">B.ING</span><span class="s1">MTK</span><span></span><span class="s2">IPA</span>
+                  <span class="s2">IPA</span><span class="s1">MTK</span><span></span><span class="s3">B.ING</span><span class="s1">MTK</span>
+                </div>
+                <div class="progress"><small>Pembayaran SPP bulan ini</small><div><i></i></div></div>
+              </div>
+            </div>
+            <div class="card__info">
+              <h3>Sistem Bimbel</h3>
+              <p>Jadwal kelas, data siswa &amp; pengajar, absensi, dan tagihan SPP untuk lembaga kursus. Dirancang dari kebutuhan umum bimbel skala kecil–menengah.</p>
+              <ul class="chips"><li>Aplikasi Internal</li><li>Penjadwalan</li><li>Tagihan</li></ul>
+            </div>
+            <small class="card__disc">Konsep · sedang dikembangkan</small>
+          </article>
+
+          <!-- 04 CTA -->
+          <article class="card card--cta" data-cursor="Halo!">
+            <div class="card__top">
+              <span class="card__num">04</span>
+              <span class="tag tag--open"><i></i>Slot terbuka</span>
+            </div>
+            <div class="cta-big">
+              <span>Proyek</span>
+              <span>Anda</span>
+              <span>di sini?</span>
+            </div>
+            <div class="card__info">
+              <p>Ceritakan alur kerja yang masih manual. Kami tinjau bersama, tunjukkan demo, lalu susun estimasi awal.</p>
+              <a href="#kontak" class="pill pill--mustard magnetic"><span>Diskusikan kebutuhan</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="works__progress" aria-hidden="true"><i></i></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="layanan">
+      <div class="services__head">
+        <p class="eyebrow">(02) — Layanan</p>
+        <h2 class="title split">Mulai dari proses, baru sistemnya.</h2>
+      </div>
+      <ol class="svc">
+        <li class="svc__item">
+          <span class="svc__n">01</span>
+          <h3>Implementasi ERP</h3>
+          <p>Pemetaan proses, konfigurasi modul, migrasi data, pelatihan pengguna, dan dukungan saat peluncuran.</p>
+          <span class="svc__arrow">→</span>
+        </li>
+        <li class="svc__item">
+          <span class="svc__n">02</span>
+          <h3>Aplikasi Internal</h3>
+          <p>Aplikasi pencatatan, persetujuan, dan alur kerja yang spesifik untuk operasional perusahaan Anda.</p>
+          <span class="svc__arrow">→</span>
+        </li>
+        <li class="svc__item">
+          <span class="svc__n">03</span>
+          <h3>Integrasi &amp; Laporan</h3>
+          <p>Pertukaran data antar sistem, otomatisasi seperlunya, dan dashboard untuk melihat kinerja operasional.</p>
+          <span class="svc__arrow">→</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="proses">
+      <div class="process__head">
+        <p class="eyebrow">(03) — Cara kerja</p>
+        <h2 class="title split">Dari kebutuhan ke sistem yang dipakai</h2>
+      </div>
+      <div class="steps">
+        <div class="steps__line" aria-hidden="true"><i></i></div>
+        <div class="step"><span>01</span><h4>Discovery</h4><p>Memahami alur, hambatan, dan tujuan.</p></div>
+        <div class="step"><span>02</span><h4>Blueprint</h4><p>Menentukan lingkup, prioritas, dan estimasi.</p></div>
+        <div class="step"><span>03</span><h4>Pengembangan</h4><p>Membangun dan meninjau progres bersama.</p></div>
+        <div class="step"><span>04</span><h4>Peluncuran</h4><p>Uji, migrasi, dan pelatihan bila diperlukan.</p></div>
+        <div class="step"><span>05</span><h4>Dukungan</h4><p>Pemeliharaan sesuai kesepakatan proyek.</p></div>
+      </div>
+    </section>
+
+    <!-- HONEST STATS -->
+    <section class="honest">
+      <p class="honest__quote split">Kami tim baru. Karena itu kami tunjukkan sistem yang benar-benar kami bangun — bukan klaim.</p>
+      <div class="stats">
+        <div><strong data-count="4">0</strong><span>Orang di tim inti</span></div>
+        <div><strong data-count="1">0</strong><span>Sistem sudah dipakai operasional</span></div>
+        <div><strong data-count="5">0</strong><span>Tahap kerja yang jelas</span></div>
+        <div><strong>2026</strong><span>Tahun berdiri</span></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER / CONTACT -->
+  <footer class="footer" id="kontak">
+    <div class="footer__top">
+      <div class="footer__form">
+        <p class="eyebrow">(04) — Kontak</p>
+        <h2 class="footer__title">Mari tinjau kebutuhan teknis bersama.</h2>
+        <form class="form" id="contactForm">
+          <label><span>Nama Anda</span><input name="nama" required autocomplete="name" /></label>
+          <label><span>Bisnis / Perusahaan</span><input name="bisnis" autocomplete="organization" /></label>
+          <label class="full"><span>Apa yang ingin dirapikan?</span><input name="pesan" required placeholder="mis. rekap stok 3 outlet masih manual" /></label>
+          <button type="submit" class="pill pill--dark pill--block magnetic"><span>Kirim via WhatsApp</span></button>
+          <small>Pesan dibuka di WhatsApp. Kami tidak menyimpan data Anda di website ini.</small>
+        </form>
+      </div>
+      <div class="footer__liquid" aria-hidden="true">
+        <svg class="liquid" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+          <g filter="url(#warp)">
+            <rect x="-100" y="-100" width="800" height="600" fill="url(#lg)" />
+            <g fill="none" stroke-width="30">
+              <path d="M-50 80 C160 20 300 170 650 90" stroke="#FFB3EA" opacity=".5" />
+              <path d="M-50 220 C150 150 320 300 650 230" stroke="#6B0848" opacity=".6" />
+              <path d="M-50 340 C170 280 330 420 650 350" stroke="#FF8ADB" opacity=".5" />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <h2 class="mega mega--footer" aria-label="Mari bicara">
+      <span class="mega__row"><span class="ch">M</span><span class="ch">A</span><span class="ch">R</span><span class="ch">I</span><span class="ch sp">&nbsp;</span><span class="ch">B</span><span class="ch">I</span><span class="ch">C</span><span class="ch">A</span><span class="ch">R</span><span class="ch">A</span></span>
+    </h2>
+
+    <div class="hero__meta footer__meta">
+      <ul>
+        <li><a href="#karya">Karya</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#proses">Proses</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://wa.me/6281998888967" target="_blank" rel="noopener">+62 819 9888 8967</a></li>
+        <li><a href="https://instagram.com/vektoraproject" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <ul>
+        <li>Bandung, Jawa Barat</li>
+        <li>Indonesia</li>
+      </ul>
+      <ul class="hero__mail">
+        <li><a href="mailto:vektoraproject.id@gmail.com">vektoraproject.id@gmail.com</a></li>
+      </ul>
+      <a href="#top" class="scroll-dot" aria-label="Kembali ke atas"><span>↑</span></a>
+    </div>
+    <div class="dashline" aria-hidden="true"></div>
+    <div class="footer__bottom">
+      <span>© 2026 Vektora Project</span>
+      <span>Dibangun oleh Vektora</span>
+      <span>Sistem digital untuk operasional bisnis</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
