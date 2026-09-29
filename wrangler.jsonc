@@ -1,0 +1,9 @@
+{
+  // Cloudflare Workers — static site (no build step)
+  "name": "vektora-portfolio",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "."
+  },
+  "workers_dev": true
+}
