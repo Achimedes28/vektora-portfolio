@@ -310,7 +310,7 @@
   // Mega letters wave on hover
   $$(".mega .ch").forEach((ch) => {
     ch.addEventListener("mouseenter", () => {
-      gsap.fromTo(ch, { y: 0 }, { y: "-0.08em", color: "#e23fb0", duration: 0.3, ease: "power2.out", yoyo: true, repeat: 1, onComplete: () => gsap.set(ch, { clearProps: "color" }) });
+      gsap.fromTo(ch, { y: 0 }, { y: "-0.08em", color: "#3fa3db", duration: 0.3, ease: "power2.out", yoyo: true, repeat: 1, onComplete: () => gsap.set(ch, { clearProps: "color" }) });
     });
   });
 

@@ -3,7 +3,7 @@
 Website portfolio Vektora Project: statis (HTML/CSS/JS), tanpa build step, siap di-deploy ke GitHub Pages atau Cloudflare Pages.
 
 ## Fitur
-- Palet mustard / maroon / pink dengan tipografi raksasa (Anton + Space Grotesk via Google Fonts)
+- Palet brand Vektora (hitam, biru Vektora #014468, putih) dengan tipografi raksasa (Anton + Space Grotesk via Google Fonts)
 - Animasi: preloader, reveal per kata, huruf raksasa naik, panel "liquid" SVG bergerak, marquee yang bereaksi pada kecepatan scroll, galeri karya horizontal ter-pin (desktop), mockup dashboard beranimasi, counter, kursor kustom, tombol magnetik, tilt 3D kartu
 - Smooth scroll (Lenis) + GSAP ScrollTrigger via CDN. Jika CDN gagal dimuat, semua konten tetap tampil tanpa animasi.
 - Responsif (mobile: galeri jadi vertikal, menu burger) dan menghormati `prefers-reduced-motion`
