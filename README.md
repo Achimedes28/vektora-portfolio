@@ -1,21 +1,32 @@
-# Vektora Project — Portfolio Website
+# Main Website — Vektora
 
-Website portfolio Vektora Project: statis (HTML/CSS/JS), tanpa build step, siap di-deploy ke GitHub Pages atau Cloudflare Pages.
+Website resmi Vektora Project: **https://vektoraproject.com**
 
-## Fitur
-- Palet brand Vektora (hitam, biru Vektora #014468, putih) dengan tipografi raksasa (Anton + Space Grotesk via Google Fonts)
-- Animasi: preloader, reveal per kata, huruf raksasa naik, panel "liquid" SVG bergerak, marquee yang bereaksi pada kecepatan scroll, galeri karya horizontal ter-pin (desktop), mockup dashboard beranimasi, counter, kursor kustom, tombol magnetik, tilt 3D kartu
-- Smooth scroll (Lenis) + GSAP ScrollTrigger via CDN. Jika CDN gagal dimuat, semua konten tetap tampil tanpa animasi.
-- Responsif (mobile: galeri jadi vertikal, menu burger) dan menghormati `prefers-reduced-motion`
-- Form kontak membuka WhatsApp dengan pesan terisi (tidak ada data yang disimpan)
+Studio sistem digital dari Bandung: implementasi ERP, aplikasi internal, dashboard, dan integrasi data untuk operasional bisnis.
+
+## Teknologi
+- HTML, CSS, dan JavaScript statis, tanpa build step
+- Animasi: GSAP + ScrollTrigger; smooth scroll Lenis (khusus desktop) — dimuat via CDN
+- Font: Anton + Space Grotesk (Google Fonts)
+- Hosting: Cloudflare Workers (static assets) dengan domain `vektoraproject.com` dan `www.vektoraproject.com`
+- Mode ringan otomatis di HP/layar sentuh (class `is-lite`) supaya animasi tetap mulus
 
 ## Struktur
-```
-index.html
-css/style.css
-js/main.js
-assets/           logo-mark.png
-```
+index.html halaman utama
+css/style.css tampilan & warna brand
+js/main.js animasi & interaksi
+assets/logo-mark.png logo terang (untuk latar gelap)
+assets/logo-mark-ink.png logo warna asli (untuk latar terang & favicon)
+wrangler.jsonc konfigurasi Cloudflare Worker
+.assetsignore file yang tidak ikut dipublikasikan
+
+## Warna brand
+| Peran | Warna |
+|---|---|
+| Hitam (latar utama) | `#05090D` |
+| Biru Vektora | `#014468` |
+| Biru terang (aksen di latar gelap) | `#3FA3DB` |
+| Putih | `#EEF3F6` |
 
 ## Menjalankan lokal
 ```bash
@@ -24,11 +35,16 @@ python3 -m http.server 8000
 ```
 
 ## Deploy
-**GitHub Pages:** Settings → Pages → Source: *Deploy from a branch* → `main` / root.
+Otomatis: setiap push ke branch `main` dibangun oleh Cloudflare Workers Builds dan tayang di vektoraproject.com dalam ±1 menit.
 
-**Cloudflare Pages:** Create project → Connect to Git → pilih repo ini → Framework preset: *None*, build command kosong, output directory `/`.
+Penting:
+- Jangan ubah `"name": "vektora-portfolio"` di `wrangler.jsonc` — domain terpasang di Worker dengan nama itu.
+- File yang tidak boleh terlihat publik didaftarkan di `.assetsignore`.
 
 ## Mengubah isi
-- Karya ada di `index.html` bagian `<section class="works">` — setiap `<article class="card">` satu karya.
-- Label jujur (`Dipakai operasional`, `Demo produk`, `Dalam pengembangan`) sengaja dipertahankan. Ganti dengan studi kasus klien hanya setelah ada izin tertulis dari klien.
-- Kontak (email, WhatsApp, Instagram) ada di hero, footer, dan `js/main.js` (nomor WA untuk form).
+- **Karya:** `index.html` → bagian `<section class="works">`; satu `<article class="card">` = satu karya.
+- **Label jujur** (`Dipakai operasional`, `Demo produk`, `Dalam pengembangan`) dipertahankan. Studi kasus klien hanya ditambahkan setelah ada izin tertulis dari klien.
+- **Kontak** (email, WhatsApp, Instagram): di hero dan footer `index.html`, serta nomor WhatsApp untuk form di `js/main.js`.
+
+---
+© 2026 Vektora Project
